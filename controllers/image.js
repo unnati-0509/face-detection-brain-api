@@ -8,11 +8,11 @@ import { response } from "express";
 
 const returnClarifaiRequestOptions = (imageURL) => {
     // Your PAT (Personal Access Token) can be found in the portal under Authentification
-    const PAT = '40fd573891814f3ea1c548cbafba0ee8';
+    const PAT = process.env.CLARIFAI_PAT;
     // Specify the correct user_id/app_id pairings
     // Since you're making inferences outside your app's scope
-    const USER_ID = 'unnati';       
-    const APP_ID = 'test';
+    const USER_ID = process.env.CLARIFAI_USER_ID;       
+    const APP_ID = process.env.CLARIFAI_APP_ID;
     // Change these to whatever model and image URL you want to use
     //const MODEL_ID = 'face-detection';  
     const IMAGE_URL = imageURL;
